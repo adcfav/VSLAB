@@ -11,7 +11,6 @@ int main() {
 	char Str[STRLEN];
 	setlocale(LC_CTYPE, "ukr");
 	printf("Програма виводу слова за його номером\n");
-
 	int NumStr = 0;
 	int InpNum = 0;
 	for (int i = 0; i < STRLEN - 1; i++) {
@@ -20,7 +19,6 @@ int main() {
 	printf("Ведiть рядок слiв(До 1000 символiв):\n");
 	fgets(Str, STRLEN, stdin);
 	OemToChar(Str, Str);
-
 	for (int i = 0; i <= STRLEN - 1; i++) {
 		if (Str[i] != ' ') {
 			NumStr++;
@@ -32,14 +30,11 @@ int main() {
 	--NumStr;
 	printf("Ведiть номер слова: \n(Cлiв в рядку %d) \n", NumStr);
 	scanf("%d", &InpNum);
-	
 	if (InpNum > NumStr || InpNum <= 0) {
 		printf("Помилка!!!\n");
 		main();
 	}
-
 	NumStr = 0;
-
 	for (int i = 0; i <= STRLEN - 1; i++) {
 		if (Str[i] != ' ') {
 			NumStr++;
@@ -55,7 +50,5 @@ int main() {
 			}
 		}
 	}
-
-	
 	return 0;
 }
