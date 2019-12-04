@@ -7,7 +7,7 @@
 #include "windows.h"
 #include <Windows.h>
 #include <conio.h>
-#define MAXSIZE 11
+#define MAXSIZE 100
 
 int check(char str1[MAXSIZE]);
 
@@ -19,8 +19,8 @@ int main(int agrc, char* agrv[]) {
 	setlocale(LC_CTYPE, "ukr");
 	SetConsoleOutputCP(1251);
 	SetConsoleCP(1251);
-	printf("Програма перевірки слова на паліндромність\n");
-	printf("Введіть слово\n");
+	printf("Програма перевірки чи є введене паліндромом\n");
+	printf("Введіть слово(лише латиньські букви)\n");
 	scanf("%s", &str1);
 	for (int i = 0; i < MAXSIZE; i++){
 		if (str1[i] == '\0') {

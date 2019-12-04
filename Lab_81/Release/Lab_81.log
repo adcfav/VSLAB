@@ -1,6 +1,6 @@
 ﻿  Lab81.c
-C:\Users\Андрей\Documents\GitHub\VSLAB\Lab_81\Lab81.c(17,8): warning C4477: "scanf": в строке форматирования "%d" требуется аргумент типа "int *", но вариативный аргумент "1" имеет тип "int"
-C:\Users\Андрей\Documents\GitHub\VSLAB\Lab_81\Lab81.c(23,6): error C2143: синтаксическая ошибка: отсутствие ";" перед "["
-C:\Users\Андрей\Documents\GitHub\VSLAB\Lab_81\Lab81.c(23,6): warning C4091:: пропускается слева от "char", когда ни одна переменная не объявлена
-C:\Users\Андрей\Documents\GitHub\VSLAB\Lab_81\Lab81.c(26,7): error C2143: синтаксическая ошибка: отсутствие ";" перед "["
-C:\Users\Андрей\Documents\GitHub\VSLAB\Lab_81\Lab81.c(26,7): warning C4091:: пропускается слева от "char", когда ни одна переменная не объявлена
+  Создание кода
+  Previous IPDB not found, fall back to full compilation.
+  All 8 functions were compiled because no usable IPDB/IOBJ from previous compilation was found.
+  Создание кода завершено
+  Lab_81.vcxproj -> C:\Users\Андрей\Documents\GitHub\VSLAB\Lab_81\Release\Lab_81.exe
