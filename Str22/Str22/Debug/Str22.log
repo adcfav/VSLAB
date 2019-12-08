@@ -1,0 +1,4 @@
+﻿  Source.c
+c:\users\андрей\source\repos\str22\str22\source.c(20): warning C4013: gets: нет определения; предполагается "extern" с возвратом типа "int"
+c:\users\андрей\source\repos\str22\str22\source.c(57): warning C4013: getch: нет определения; предполагается "extern" с возвратом типа "int"
+  Str22.vcxproj -> C:\Users\Андрей\source\repos\Str22\Debug\Str22.exe

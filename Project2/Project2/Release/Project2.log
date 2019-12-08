@@ -1,0 +1,8 @@
+﻿  Source.c
+c:\users\андрей\source\repos\project2\project2\source.c(23): warning C4013: gets: нет определения; предполагается "extern" с возвратом типа "int"
+  Создание кода
+  1 of 7 functions (14.3%) were compiled, the rest were copied from previous compilation.
+    0 functions were new in current compilation
+    0 functions had inline decision re-evaluated but remain unchanged
+  Создание кода завершено
+  Project2.vcxproj -> C:\Users\Андрей\source\repos\Project2\Release\Project2.exe

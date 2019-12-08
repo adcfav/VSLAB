@@ -1,0 +1,6 @@
+﻿  Source.c
+c:\users\андрей\source\repos\str22\str22\source.c(22): warning C4013: gets: нет определения; предполагается "extern" с возвратом типа "int"
+  Создание кода
+  All 7 functions were compiled because no usable IPDB/IOBJ from previous compilation was found.
+  Создание кода завершено
+  Str22.vcxproj -> C:\Users\Андрей\source\repos\Str22\Release\Str22.exe
