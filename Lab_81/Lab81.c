@@ -22,7 +22,7 @@ int main(int agrc, char* agrv[]) {
 	if (i < 1 || i>12) {
 		printf("Помилка, введіть число від 1 до 12\n");
 		while (i < 1 || i>12) {
-			scanf_s("%d", &i);
+			scanf("%[123456789,10,12]", &i);
 		}
 	}
 	puts(month(i, mon));
