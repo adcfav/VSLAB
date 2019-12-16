@@ -1,0 +1,6 @@
+﻿  LAB10.c
+C:\Users\Андрей\Documents\GitHub\VSLAB\LAB10\LAB10.c(39,13): warning C4013: getch: нет определения; предполагается "extern" с возвратом типа "int"
+C:\Users\Андрей\Documents\GitHub\VSLAB\LAB10\LAB10.c(68): warning C4716: Write: должна возвращать значение
+C:\Users\Андрей\Documents\GitHub\VSLAB\LAB10\LAB10.c(64): warning C4715: Ask: значение возвращается не при всех путях выполнения
+C:\Users\Андрей\Documents\GitHub\VSLAB\LAB10\LAB10.c(146): warning C4715: Input: значение возвращается не при всех путях выполнения
+  LAB10.vcxproj -> C:\Users\Андрей\Documents\GitHub\VSLAB\LAB10\Debug\LAB10.exe
