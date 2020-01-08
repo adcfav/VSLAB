@@ -28,7 +28,37 @@ int main(int agrc, char* agrv[])
 {
 	SetConsoleOutputCP(1251);
 	SetConsoleCP(1251);
-	Input();
+	setlocale(LC_ALL, "Ukr");
+	Write(NULL,Sort(Input()));
+	if (agrc == 3) {
+		if (!strcmp(agrv[1], "-rf")) {
+			printf("Програма приняла аргументи\n");
+			Read(agrv[2]);
+		}
+		else if (!strcmp(agrv[1], "-wf")) {
+			printf("Програма приняла аргументи\n");
+			Write(agrv[2],Input());
+		}
+	}
+	if (agrc == 2) {
+		if (!strcmp(agrv[1], "-rf")) {
+			printf("Програма приняла аргументи\n");
+			Read(NULL);
+		}
+		else if (!strcmp(agrv[1], "-wf")) {
+			printf("Програма приняла аргументи\n");
+			Write(NULL, Input());
+		}
+	}
+	printf("Програма введення інформації про готелі та сортування за зірками\n");
+
+	printf("Бажаєте стоворити чи зчитати файл(1 - створити, 0 - зчитати, q - вийти з програми)");
+	if (Ask(TRUE)) {
+		Write(NULL,Input());
+	}
+	else {
+		Read(NULL);
+	}
 	return 0;
 }
 
@@ -48,7 +78,7 @@ int Ask(int Quit) {
 			break;
 		case 'q':
 			if (Quit == TRUE) {
-				return FALSE;
+				exit(-1);
 			}
 			else {
 				printf("\nНе вірний ввід, спробуйте ще\n");
@@ -64,7 +94,85 @@ int Ask(int Quit) {
 }
 
 int Write(char* Name,char* Adress) {
+	FILE* Fp;
+	char Ch;
 
+	if (Name == NULL) {
+		Name = (char*)malloc(STRSIZE * sizeof(char));
+
+		if (!Name) {
+			printf("Помилка при виділенні памяті\n");
+			printf("Спробувати знову?(1 - так, 0 - вихід)\n");
+			if (Ask(FALSE)) {
+				system("cls");
+				main(1, 0);
+			}
+			else {
+				return 0;
+			}
+		}
+
+		printf("\nВведіть імя нового файлу\n");
+		scanf("%*[^\n]");
+		scanf("%20s", Name);
+		scanf("%*[^\n]");
+
+		if ((Fp = fopen(Name, "w+")) == NULL) {
+			printf("Помилка створення файлу.\n");
+			printf("Спробувати знову?(1 - так, 0 - вихід)\n");
+			if (Ask(FALSE)) {
+				system("cls");
+				free(Name);
+				free(Adress);
+				main(1, 0);
+			}
+			else {
+				return 0;
+			}
+		}
+		free(Name);
+	}
+	else {
+		if ((Fp = fopen(Name, "at")) == NULL) {
+			printf("Помилка !!!\n");
+			printf("Спробувати знову?(1 - так, 0 - вихід)\n");
+			if (Ask(FALSE)) {
+				system("cls");
+				free(Adress);
+				main(1, 0);
+			}
+			else {
+				return 0;
+			}
+		}
+	}
+	int i = 0;
+	int j = 0;
+	while (*(Adress + i) != '\0') {
+		if (*(Adress + i) == '$') {
+			fputc(',', Fp);
+			j++;
+			if (j == 4) {
+				fputc('\n', Fp);
+				j = 0;
+			}
+		}
+		else {
+			fputc(*(Adress + i), Fp);
+		}
+		i++;
+	}
+	fclose(Fp);
+	free(Adress);
+
+	printf("Виконано, спробувати ще? 1-так 0-вихід\n");
+	if (Ask(FALSE)) {
+		system("cls");
+		main(1, 0);
+	}
+	else {
+		return 0;
+	}
 }
 
 char* Input() {
@@ -72,7 +180,7 @@ char* Input() {
 	char* Adress;
 	int Row;
 
-	printf("Скільки бажаєте ввести готелів(за замовчуванням 3)\n");
+	printf("\nСкільки бажаєте ввести готелів(за замовчуванням 3)\n");
 
 	if (!scanf("%d", &Row) || Row <= 0) {
 		fflush(stdin);
@@ -84,13 +192,15 @@ char* Input() {
 		printf("Встановленно значення %d\n", Row);
 	}
 
-	Adress = (char*)malloc(sizeof(char) * STRUCTSIZE * Row + 4*Row);
+	Adress = (char*)malloc(sizeof(char) * STRUCTSIZE * Row + 4 * Row);
 
 	if (!Adress) {
 		printf("Брак памяті");
+		system("pause");
 		exit(-1);
 	}
 
+	
 	*(Adress) = '\0';
 
 	// Заповнення масиву
@@ -98,49 +208,203 @@ char* Input() {
 		for (int j = 0; j < 4; j++) {
 			switch (j) {
 			case 0:
-				printf("Введіть імя готелю %d         ", i + 1);
+				printf("Введіть імя готелю                  ");
 				scanf("%20s", Buffer.Name);
 				scanf("%*[^\n]");
 				break;
 			case 1:
-				printf("Введіть адресу               ");
+				printf("Введіть адресу                      ");
 				scanf("%20s", Buffer.City);
 				scanf("%*[^\n]");
 				break;
 			case 2:
-				printf("Введіть кількість кімнат     ");
+				printf("Введіть кількість кімнат            ");
 				scanf("%5s", Buffer.Rooms);
 				scanf("%*[^\n]");
+				for (int i = 0; i < 5; i++) {
+					if (*(Buffer.Rooms + i) == '\0') {
+						break;
+					}
+					if (!(strchr("1234567890", *(Buffer.Rooms + i)))) {
+						printf("Програма приняла недопустимий символ, спробуйте ще\n");
+						j--;
+						break;
+					}
+				}
 				break;
 			case 3:
-				printf("Введіть кількість зірок      ");
+				printf("Введіть кількість зірок             ");
 				scanf("%5s", Buffer.Stars);
 				scanf("%*[^\n]");
+				for (int i = 0; i < 5; i++) {
+					if(*(Buffer.Stars + i) == '\0'){
+						break;
+					}
+					if (*(Buffer.Stars + i) != '*'){
+						printf("Програма приняла недопустимий символ, спробуйте ще\n");
+						j--;
+						break;
+					}
+				}
 				break;
 			}
 		}
-
+		
 		for (int j = 0; j < 4; j++) {
 			switch (j) {
 			case 0:
 				strcat(Adress, Buffer.Name);
-    			
 				break;
 			case 1:
 				strcat(Adress, Buffer.City);
-				
 				break;
 			case 2:
 				strcat(Adress, Buffer.Rooms);
-				
 				break;
 			case 3:
 				strcat(Adress, Buffer.Stars);
-				
 				break;
 			}
 			strcat(Adress, "$");
 		}
 	}
 	return Adress;
+}
+
+int Read(char* Name) {
+	FILE* fp;
+	char* Ch;
+	if (Name == NULL) {
+		Name = (char*)malloc(STRSIZE * sizeof(char));
+
+		if (!Name) {
+			printf("Помилка при виділенні памяті\n");
+			printf("Спробувати ще? 1-так 0-вихід\n");
+			if (Ask(FALSE)) {
+				system("cls");
+				main(1, 0);
+			}
+			else {
+				return 0;
+			}
+		}
+
+		printf("\nВведіть імя існуючого файлу\n");
+
+		fgets(Name, STRSIZE, stdin);
+		*(Name + strlen(Name) - 1) = '\0';
+		fflush(stdin);
+	}
+
+	if ((fp = fopen(Name, "r")) == NULL) {
+		printf("Помилка при відкритті файлу.\n");
+		printf("Спробувати знову?(1 - так, 0 - вихід)\n");
+		if (Ask(FALSE)) {
+			system("cls");
+			free(Name);
+			main(1, 0);
+		}
+		else {
+			return 0;
+		}
+	}
+	else {
+		printf("Назва: Адреса: Кімнати: Зірки:\n");
+		while ((Ch = getc(fp)) != EOF) {
+			putchar(Ch);
+		}
+	}
+	fclose(fp);
+	printf("Спробувати знову?(1 - так, 0 - вихід)\n");
+	if (Ask(FALSE)) {
+		system("cls");
+		free(Name);
+		main(1, 0);
+	}
+	else {
+		return 0;
+	}
+}
+
+char* Sort(char* Adress) {
+	char Buffer[STRUCTSIZE] ;
+	int status = 0;
+	int g = 0;
+	int i = 0;
+	int prev = 0;
+	int prev2 = 0;
+	int Stars2 = 0;
+	int Stars = 0;
+	int Len = 0;
+	int Len2 = 0;
+	int count = 0;
+	int loops;
+
+	while (*(Adress + g) != '\0') {
+		if (*(Adress + g) == '$') {
+			count++;
+		}
+		g++;
+	}
+
+	loops = count / 4;
+
+	if (loops == 1) {
+		return Adress;
+	}
+
+	for (int r = 0; r < loops; r++) {
+
+		while (*(Adress + i) != '*') {
+			i++;
+			while (*(Adress + i) == '*') {
+				Stars++;
+				i++;
+				if (*(Adress + i) != '*') {
+					status = 1;
+					break;
+				}
+			}
+			Len = i;
+			if (status == 1) {
+				break;
+			}
+		}
+		status = 0;
+		prev2 = Len;
+		while (*(Adress + i) != '*') {
+			i++;
+			while (*(Adress + i) == '*') {
+				Stars2++;
+				i++;
+				if (*(Adress + i) != '*') {
+					status = 1;
+					break;
+				}
+			}
+			Len2 = i;
+			if (status == 1) {
+				break;
+			}
+		}
+		if (Stars > Stars2) {
+			for (int j = 0; j <= Len; j++) {
+				Buffer[j] = *(Adress + prev + j);
+				Buffer[j + 1] = '\0';
+			}
+			for (int j = 0; j < (Len2 - Len); j++) {
+				*(Adress + prev + j) = *(Adress + prev2 + j + 1);
+			}
+			for (int j = 0; j <= Len; j++) {
+				*(Adress + prev2 + j - 1) = Buffer[j];
+			}
+		}
+		Stars = 0;
+		Stars2 = 0;
+		prev = Len;
+		prev2 == Len2;
+	}
+		
+		return Adress;
+	
 }

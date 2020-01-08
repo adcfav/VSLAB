@@ -1,6 +1,53 @@
 ﻿  LAB10.c
-C:\Users\Андрей\Documents\GitHub\VSLAB\LAB10\LAB10.c(39,13): warning C4013: getch: нет определения; предполагается "extern" с возвратом типа "int"
-C:\Users\Андрей\Documents\GitHub\VSLAB\LAB10\LAB10.c(68): warning C4716: Write: должна возвращать значение
-C:\Users\Андрей\Documents\GitHub\VSLAB\LAB10\LAB10.c(64): warning C4715: Ask: значение возвращается не при всех путях выполнения
-C:\Users\Андрей\Documents\GitHub\VSLAB\LAB10\LAB10.c(146): warning C4715: Input: значение возвращается не при всех путях выполнения
-  LAB10.vcxproj -> C:\Users\Андрей\Documents\GitHub\VSLAB\LAB10\Debug\LAB10.exe
+C:\Users\Андрей\Documents\GitHub\VSLAB\LAB10\LAB10.c(69,13): warning C4013: getch: нет определения; предполагается "extern" с возвратом типа "int"
+C:\Users\Андрей\Documents\GitHub\VSLAB\LAB10\LAB10.c(98,7): warning C4101: Ch: неиспользованная локальная переменная
+C:\Users\Андрей\Documents\GitHub\VSLAB\LAB10\LAB10.c(313,24): warning C4047: =: "char *" отличается по уровням косвенного обращения от "int"
+C:\Users\Андрей\Documents\GitHub\VSLAB\LAB10\LAB10.c(313,32): warning C4047: !=: "char *" отличается по уровням косвенного обращения от "int"
+C:\Users\Андрей\Documents\GitHub\VSLAB\LAB10\LAB10.c(314,14): warning C4047: функция: "int" отличается по уровням косвенного обращения от "char *"
+C:\Users\Андрей\Documents\GitHub\VSLAB\LAB10\LAB10.c(314,14): warning C4024: putchar: различные типы для формального и фактического параметров 1
+C:\Users\Андрей\Documents\GitHub\VSLAB\LAB10\LAB10.c(360,22): error C2065: i: необъявленный идентификатор
+C:\Users\Андрей\Documents\GitHub\VSLAB\LAB10\LAB10.c(361,5): error C2065: i: необъявленный идентификатор
+C:\Users\Андрей\Documents\GitHub\VSLAB\LAB10\LAB10.c(362,23): error C2065: i: необъявленный идентификатор
+C:\Users\Андрей\Documents\GitHub\VSLAB\LAB10\LAB10.c(363,10): error C2065: Stars: необъявленный идентификатор
+C:\Users\Андрей\Documents\GitHub\VSLAB\LAB10\LAB10.c(364,6): error C2065: i: необъявленный идентификатор
+C:\Users\Андрей\Documents\GitHub\VSLAB\LAB10\LAB10.c(365,21): error C2065: i: необъявленный идентификатор
+C:\Users\Андрей\Documents\GitHub\VSLAB\LAB10\LAB10.c(366,13): error C2065: status: необъявленный идентификатор
+C:\Users\Андрей\Documents\GitHub\VSLAB\LAB10\LAB10.c(370,8): error C2065: Len: необъявленный идентификатор
+C:\Users\Андрей\Documents\GitHub\VSLAB\LAB10\LAB10.c(370,11): error C2065: i: необъявленный идентификатор
+C:\Users\Андрей\Documents\GitHub\VSLAB\LAB10\LAB10.c(371,15): error C2065: status: необъявленный идентификатор
+C:\Users\Андрей\Documents\GitHub\VSLAB\LAB10\LAB10.c(375,10): error C2065: status: необъявленный идентификатор
+C:\Users\Андрей\Documents\GitHub\VSLAB\LAB10\LAB10.c(376,9): error C2065: prev2: необъявленный идентификатор
+C:\Users\Андрей\Documents\GitHub\VSLAB\LAB10\LAB10.c(376,14): error C2065: Len: необъявленный идентификатор
+C:\Users\Андрей\Documents\GitHub\VSLAB\LAB10\LAB10.c(377,22): error C2065: i: необъявленный идентификатор
+C:\Users\Андрей\Documents\GitHub\VSLAB\LAB10\LAB10.c(378,5): error C2065: i: необъявленный идентификатор
+C:\Users\Андрей\Documents\GitHub\VSLAB\LAB10\LAB10.c(379,23): error C2065: i: необъявленный идентификатор
+C:\Users\Андрей\Documents\GitHub\VSLAB\LAB10\LAB10.c(380,11): error C2065: Stars2: необъявленный идентификатор
+C:\Users\Андрей\Documents\GitHub\VSLAB\LAB10\LAB10.c(381,6): error C2065: i: необъявленный идентификатор
+C:\Users\Андрей\Documents\GitHub\VSLAB\LAB10\LAB10.c(382,21): error C2065: i: необъявленный идентификатор
+C:\Users\Андрей\Documents\GitHub\VSLAB\LAB10\LAB10.c(383,13): error C2065: status: необъявленный идентификатор
+C:\Users\Андрей\Documents\GitHub\VSLAB\LAB10\LAB10.c(387,9): error C2065: Len2: необъявленный идентификатор
+C:\Users\Андрей\Documents\GitHub\VSLAB\LAB10\LAB10.c(387,12): error C2065: i: необъявленный идентификатор
+C:\Users\Андрей\Documents\GitHub\VSLAB\LAB10\LAB10.c(388,15): error C2065: status: необъявленный идентификатор
+C:\Users\Андрей\Documents\GitHub\VSLAB\LAB10\LAB10.c(392,13): error C2065: Stars: необъявленный идентификатор
+C:\Users\Андрей\Documents\GitHub\VSLAB\LAB10\LAB10.c(392,21): error C2065: Stars2: необъявленный идентификатор
+C:\Users\Андрей\Documents\GitHub\VSLAB\LAB10\LAB10.c(393,28): error C2065: Len: необъявленный идентификатор
+C:\Users\Андрей\Documents\GitHub\VSLAB\LAB10\LAB10.c(394,11): error C2065: Buffer: необъявленный идентификатор
+C:\Users\Андрей\Documents\GitHub\VSLAB\LAB10\LAB10.c(394,13): error C2109: для индекса требуется массив или указатель
+C:\Users\Андрей\Documents\GitHub\VSLAB\LAB10\LAB10.c(394,33): error C2065: prev: необъявленный идентификатор
+C:\Users\Андрей\Documents\GitHub\VSLAB\LAB10\LAB10.c(395,11): error C2065: Buffer: необъявленный идентификатор
+C:\Users\Андрей\Documents\GitHub\VSLAB\LAB10\LAB10.c(395,17): error C2109: для индекса требуется массив или указатель
+C:\Users\Андрей\Documents\GitHub\VSLAB\LAB10\LAB10.c(397,30): error C2065: Len2: необъявленный идентификатор
+C:\Users\Андрей\Documents\GitHub\VSLAB\LAB10\LAB10.c(397,35): error C2065: Len: необъявленный идентификатор
+C:\Users\Андрей\Documents\GitHub\VSLAB\LAB10\LAB10.c(398,21): error C2065: prev: необъявленный идентификатор
+C:\Users\Андрей\Documents\GitHub\VSLAB\LAB10\LAB10.c(398,45): error C2065: prev2: необъявленный идентификатор
+C:\Users\Андрей\Documents\GitHub\VSLAB\LAB10\LAB10.c(400,28): error C2065: Len: необъявленный идентификатор
+C:\Users\Андрей\Documents\GitHub\VSLAB\LAB10\LAB10.c(401,22): error C2065: prev2: необъявленный идентификатор
+C:\Users\Андрей\Documents\GitHub\VSLAB\LAB10\LAB10.c(401,39): error C2065: Buffer: необъявленный идентификатор
+C:\Users\Андрей\Documents\GitHub\VSLAB\LAB10\LAB10.c(401,41): error C2109: для индекса требуется массив или указатель
+C:\Users\Андрей\Documents\GitHub\VSLAB\LAB10\LAB10.c(404,9): error C2065: Stars: необъявленный идентификатор
+C:\Users\Андрей\Documents\GitHub\VSLAB\LAB10\LAB10.c(405,10): error C2065: Stars2: необъявленный идентификатор
+C:\Users\Андрей\Documents\GitHub\VSLAB\LAB10\LAB10.c(406,8): error C2065: prev: необъявленный идентификатор
+C:\Users\Андрей\Documents\GitHub\VSLAB\LAB10\LAB10.c(406,13): error C2065: Len: необъявленный идентификатор
+C:\Users\Андрей\Documents\GitHub\VSLAB\LAB10\LAB10.c(407,9): error C2065: prev2: необъявленный идентификатор
+C:\Users\Андрей\Documents\GitHub\VSLAB\LAB10\LAB10.c(407,16): error C2065: Len2: необъявленный идентификатор
+C:\Users\Андрей\Documents\GitHub\VSLAB\LAB10\LAB10.c(407,9): warning C4553: "==": результат выражения не используется; вы хотели использовать "="?
