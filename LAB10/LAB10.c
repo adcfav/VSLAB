@@ -14,7 +14,6 @@
 int Ask(int);
 int Write(char*,char*);
 int Read(char*);
-char* Sort(char*);
 char* Input();
 
 struct Hotel {
@@ -326,85 +325,3 @@ int Read(char* Name) {
 	}
 }
 
-char* Sort(char* Adress) {
-	char Buffer[STRUCTSIZE] ;
-	int status = 0;
-	int g = 0;
-	int i = 0;
-	int prev = 0;
-	int prev2 = 0;
-	int Stars2 = 0;
-	int Stars = 0;
-	int Len = 0;
-	int Len2 = 0;
-	int count = 0;
-	int loops;
-
-	while (*(Adress + g) != '\0') {
-		if (*(Adress + g) == '$') {
-			count++;
-		}
-		g++;
-	}
-
-	loops = count / 4;
-
-	if (loops == 1) {
-		return Adress;
-	}
-
-	for (int r = 0; r < loops; r++) {
-
-		while (*(Adress + i) != '*') {
-			i++;
-			while (*(Adress + i) == '*') {
-				Stars++;
-				i++;
-				if (*(Adress + i) != '*') {
-					status = 1;
-					break;
-				}
-			}
-			Len = i;
-			if (status == 1) {
-				break;
-			}
-		}
-		status = 0;
-		prev2 = Len;
-		while (*(Adress + i) != '*') {
-			i++;
-			while (*(Adress + i) == '*') {
-				Stars2++;
-				i++;
-				if (*(Adress + i) != '*') {
-					status = 1;
-					break;
-				}
-			}
-			Len2 = i;
-			if (status == 1) {
-				break;
-			}
-		}
-		if (Stars > Stars2) {
-			for (int j = 0; j <= Len; j++) {
-				Buffer[j] = *(Adress + prev + j);
-				Buffer[j + 1] = '\0';
-			}
-			for (int j = 0; j < (Len2 - Len); j++) {
-				*(Adress + prev + j) = *(Adress + prev2 + j + 1);
-			}
-			for (int j = 0; j <= Len; j++) {
-				*(Adress + prev2 + j - 1) = Buffer[j];
-			}
-		}
-		Stars = 0;
-		Stars2 = 0;
-		prev = Len;
-		prev2 == Len2;
-	}
-		
-		return Adress;
-	
-}
